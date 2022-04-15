@@ -48,9 +48,13 @@ FROM
 DROP TABLE IF EXISTS complete_left_join_dataset;
 CREATE TEMP TABLE complete_left_join_dataset AS
 SELECT
-  rental.customer_id,
-  inventory.film_id,
-  film.title,
+  rental.inventory_id AS inventory_id,
+  rental.rental_id AS rental_id,
+  rental.customer_id AS customer_id,
+  rental.rental_date,
+  inventory.film_id AS film_id,
+  film.title AS title,
+  film_category.category_id AS category_id,
   category.name AS category_name
 FROM
   dvd_rentals.rental
