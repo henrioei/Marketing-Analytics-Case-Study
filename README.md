@@ -284,7 +284,7 @@ SELECT DISTINCT
   COUNT(*) OVER (
     PARTITION BY film_id
   ) AS rental_count
-FROM complete_joint_dataset;
+FROM complete_joint_dataset_with_rental_date;
 
 -- Category Film Exclusions
 
